@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/blasfema.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap-5-0.2-dist/css/bootstrap.min.css') }}">
+
+    {% block customCSS %}
+    {% endblock %}
+</head>
+<body>
+    {% block body %} 
+        
+        
+        {% block customJS %} 
+        {% endblock %}
+        <script src="{{ url_for('static', filename='lib/bootstrap-5-0.2-dist/js/bootstrap.min.js') }}"></script>
+    {% endblock %}
+</body>
+</html>
