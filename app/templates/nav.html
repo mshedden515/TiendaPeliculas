@@ -5,12 +5,16 @@
       -->
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup mg-auto">
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Index</a>
-          <a class="nav-link" href="#">Peliculas</a>
+          {% if current_user.tipousuario.id == 2 %}
+            <a class="nav-link" href="{{ url_for('listar_libros') }}">Peliculas</a>
+          {% endif %}
           <a class="nav-link" href="{{ 'logout' }}">Cerrar Sesion</a>
         </div>
       </div>
+      <span class="navbar-text"> <strong>{{ current_user.usuario }}</strong> - ({{ current_user.tipousuario.nombre }})</span>
     </div>
+    
   </nav>
